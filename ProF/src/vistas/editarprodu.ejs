@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Editar producto</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imagen/png" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://sistemasongoku.com/plugins/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		.nave{
+			color: black;
+			font-size: 18px;
+		}
+	</style>
+	<header>
+        <nav class="navbar navbar-expand-lg " style="background-color:rgb(178, 192, 192);">
+            <a style=  "margin-left: 60px" class="navbar-brand" href="/inicio"> <img src="../imagen/logo.png"  style="max-width: 120px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02" style=  "margin-left: 90px">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" style=  "margin-left: 100px"  href="/inicio"><b class="nave">Inicio</b> </a>                    
+                        <li class="nav-item ">
+                            <a class="nav-link h5.5" href="/usuario"><b class="nave">Usuarios</b></a></li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" href="/producto"><b class="nave">Productos</b></a></li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" href="/proveedor"><b class="nave">Proveedores</b></a></li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5 " href="/stock"><b class="nave">Stock Producto</b></a> </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5"  href="/informe"><b class="nave">Informes</b></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link"  text-danger href="/login" ><b class="nave">Cerrar Session</b> <i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+               </ul>
+			</div>
+        </nav>
+    </header>
+	<section class="container pt-4 mt-4">
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-4">
+                    <form method="POST" action="../Productos/productos.html" enctype="multipart/form-data" class="row">
+                    	<div class="row col-sm-8">
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Nombre del Producto</label>
+				                  <input type="text" class="form-control" name="nombre_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Tipo de Producto</label>
+				                  <input type="text" class="form-control" name="tipo_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Fecha de Vencimiento</label>
+				                  <input type="date" class="form-control" name="fechav_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Costo</label>
+				                  <input type="number"  class="form-control" step="0.01" name="costo_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-12">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1"> Descripcion de Producto</label>
+	                  			  <textarea class="form-control ckeditor" name="descripcion_p">Descripcion</textarea>
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Marca de Producto</label>
+				                  <input type="text" class="form-control" name="marca_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Modelo de Producto</label>
+				                  <input type="text" class="form-control" name="modelo_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Peso</label>
+				                  <input type="number"  class="form-control" step="0.01" name="peso" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">Unidad de Medida</label>
+				                  <input type="text" class="form-control" name="unimedida_p" required="required" value="">
+				                </div>
+	                    	</div>
+	                    	<div class="col-sm-6">
+				                <div class="form-group">
+				                  <label for="exampleInputEmail1">cantidad</label>
+				                  <input type="number"  class="form-control" name="cantidad_p" required="required" value="">
+				                </div>
+	                    	</div>
+                    	</div>
+                    	<div class="row col-sm-4">
+	                    	<div class="col-sm-12 row">
+				                <div class="col-sm-12 form-group">
+				                  <label for="exampleInputEmail1">Foto de Protada</label>
+				                  	<br>
+				                  	<img src="<?= IMG.$foto1_p; ?>" class="col-sm-12">
+				                  <input type="file" class="form-control" name="foto1_p">
+				                  <input type="hidden" class="form-control" name="act_foto1_p" value="">
+				                </div>
+				                <div class="col-sm-12 form-group">
+				                  <label for="exampleInputEmail1">Foto 2</label>
+				                  	<br>
+				                  	<img src="<?= IMG.$foto2_p; ?>" class="col-sm-12">
+				                  <input type="file" class="form-control" name="foto2_p">
+				                  <input type="hidden" class="form-control" name="act_foto2_p" value="">
+				                </div>
+				                <div class="col-sm-12 form-group">
+				                  <label for="exampleInputEmail1">Foto 3</label>
+				                  	<br>
+				                  	<img src="<?= IMG.$foto3_p; ?>" class="col-sm-12">
+				                  <input type="file" class="form-control" name="foto3_p">
+				                  <input type="hidden" class="form-control" name="act_foto3_p" value="">
+				                </div>
+				                <div class="col-sm-12 form-group">
+				                  <label for="exampleInputEmail1">Foto 4</label>
+				                  	<br>
+				                  	<img src="<?= IMG.$foto4_p; ?>" class="col-sm-12">
+				                  <input type="file" class="form-control" name="foto4_p">
+				                  <input type="hidden" class="form-control" name="act_foto4_p" value="">
+				                </div>
+				                <div class="col-sm-12 form-group">
+				                  <label for="exampleInputEmail1">Foto 5</label>
+				                  	<br>
+				                  	<img src="<?= IMG.$foto5_p; ?>" class="col-sm-12">
+				                  <input type="file" class="form-control" name="foto5_p">
+				                  <input type="hidden" class="form-control" name="act_foto5_p" value="">
+				                </div>
+	                    	</div>
+	                    </div>
+                    	<div class="row col-sm-12">
+                    		<div class="col-sm-6">
+                    			<a href="/productos" class="btn btn-danger btn-block"><i class="fas fa-arrow-left"></i> Regresar</a>
+	                    	</div>
+                    		<div class="col-sm-6">
+                    			<input type="hidden" name="pid" value="">
+                    			<input type="hidden" name="id_updated" value="">
+                    			<button type="submit" name="editar" class="btn btn-success btn-block">Editar <i class="fas fa-edit"></i></button>
+	                    	</div>
+	                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+	</section>
+</body>
+</html>
+
+	

@@ -1,0 +1,20 @@
+{
+  "name": "prof",
+  "version": "1.0.0",
+  "description": "Proyecto",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node_modules/.bin/wdio ./wdio.configuracion.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "webpack": "^5.24.2"
+  }
+}

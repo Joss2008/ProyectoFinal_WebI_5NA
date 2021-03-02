@@ -1,0 +1,224 @@
+body{
+	text-align: center;
+	font-size: 16px;
+}
+ form {
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px solid #c1c1c1;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    font-size:17px;
+ }
+form button {
+	background: lightgrey;
+	padding: 0.7em;
+	border: 0;
+}
+form button:hover {
+    background: gold;
+}
+  
+label {
+	text-align: left;
+	display: block;
+	padding: 0.5em 1.5em 0.5em 0;
+}
+  
+.form-control {
+	width: 100%;
+	padding: 0.7em;
+	margin-bottom: 0.5rem;
+} 
+.form-control:focus {
+	outline: 3px solid gold;
+} 
+
+/*Pie de pagina*/
+
+footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background-color:rgb(178, 192, 192);
+    color: black;
+}
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 700;
+    /*text-transform: uppercase;*/
+}
+.box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+
+.box .content p{
+    text-align: justify;
+}
+.left .content .social{
+    margin: 20px 0 0 0;
+}
+.left .content .social a{
+    padding: 0 2px;
+    
+}
+.left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(42, 95, 165);
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    color:#fff;
+}
+.left .content .social a span:hover{
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all .6s;
+    border-radius: 50px;
+}
+.center .content .icon{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    background-color: rgb(114, 231, 227);
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.center .content .icon:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all .6s;
+    border-radius: 50px;
+    color: #000;
+}
+.center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.center .content .phone{
+    margin: 10px;
+}
+.right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    
+}
+.right form .msg{
+    margin-top: 10px;
+}
+.right form input, .right form textarea{
+    width: 100%; 
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+    color:#fff;
+}
+.right form input:focus,
+.right form textarea:focus{
+    outline-color: #3498db;
+}
+.right form input{
+    height: 35px;
+}
+.right form .btn{
+    margin-top: 10px;
+}
+.right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+.right .form .btn button:hover{
+    background: #000;
+    
+}
+.bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: rgb(61 113 101);
+}
+.bottom .center span{
+    color: #656565;
+}
+@media screen and (max-width: 900px){
+    footer{
+        position: relative;
+        top: 30px;
+        bottom: 0px;
+    }
+    .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box{
+        margin: 5px 0px;
+    }
+}
+
+/*Card*/
+.card2{
+    background-color:rgb(178, 192, 192);
+    width: 20em;
+}
+
+.card1{
+    background-color: rgb(114, 231, 227);
+    width: 20em;
+}
+.cardstock2{
+    background-color:rgb(178, 192, 192);
+    width: 20em;
+    
+}
+.card-group2{
+    padding: 120px 30px 30px 50px;
+    display: flex;
+}
+
+.cardstock1{
+    background-color: rgb(114, 231, 227);
+    width: 20em;
+    padding: 18px;
+}
+
+/*NAVEGACION*/
+
+.nave{
+    color: black;
+    font-size: 18px;
+}
+
+/*parrafo*/
+.sobren{
+    margin: 10px 10px;
+    padding: 10px 50px;
+}
+
+/**/
+.credit{
+    color: white;
+}

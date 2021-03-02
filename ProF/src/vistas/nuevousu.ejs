@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nuevo Usuario</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div class="modal fade" id="nuevo" tabindex="-1" aria-labelledby="nuevoLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	    	 <form method="post" action="/nuevousu">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tipo de Usuarios</label>
+                  <input type="text" class="form-control" id="tipo_u" name="tipo_u" required="required">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nombres y Apellidos</label>
+                  <input type="text" class="form-control" id="name" name="nombre_u" required="required">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Usuario</label>
+                  <input type="text" class="form-control" id="user" name="usuario_u" required pattern="[A-Z]{2}[a-z]{4}[0-9]{3}" title="El usuario debe contar con 2 letras mayusculas, 4 letras minusculas y 3 numeros">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Correo</label>
+                  <input type="email" class="form-control" name="correo_u" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña</label>
+                  <input type="password" class="form-control" id="pass" name="contra_u" required pattern="[A-Z]{1}[a-z]{4}[0-9]{4}" title="La contraseña debe contar con 1 letra mayuscula, 4 letras minusculas y 4 numeros">
+                </div>
+                <div class="form-group form-check">
+                  <div class="icheck-primary">
+                    <input type="checkbox" id="ver_pass" onchange="document.getElementById('pass').type = this.checked ? 'text' : 'password'">
+                    <label for="ver_pass">Ver contraseña</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Foto</label>
+                  <input type="file" class="form-control" name="foto_u">
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 pb-3">
+					<button type="submit" name="nuevo"  onclick="nuevousuario();" class="btn btn-primary">Guardar <i class="fas fa-save"></i></button>
+                  </div>
+		       <script type="text/javascript">
+                    function nuevousuario(){
+                      nombre_u =document.getElementById('name').value;
+                      usuario_u =document.getElementById('user').value;
+                      correo_u =document.getElementById('email').value;
+                      contra_u =document.getElementById('pass').value;
+
+                      if (nombre_u==null || nombre_u.length ==0) {
+                        alert("Algunos campos estan vacios");
+                        return false;
+                      }
+                      if (usuario_u==null || usuario_u.length ==0) {
+                        alert("Algunos campos estan vacios");
+                        return false;
+                      }
+                      if (correo_u==null || correo_u.length ==0) {
+                        alert("Algunos campos estan vacios");
+                        return false;
+                      }
+                     
+                      if (contra_u==null || contra_u.length ==0) {
+                          alert("Algunos campos estan vacios");
+                          return false;
+                      }
+                      alert("Usuario agregado")
+                      window.close();
+                      return true;
+                    }
+                  </script>
+		    </form>
+	    </div>
+	  </div>
+	</div>
+</body>
+</html>

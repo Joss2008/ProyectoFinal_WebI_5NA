@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar usuario</title>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="imagen/png" href="favicon.ico">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+   <script type="text/javascript" src="https://sistemasongoku.com/plugins/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+    <style type="text/css">
+		.nave{
+			color: black;
+			font-size: 18px;
+		}
+		</style>
+    <header>
+        <nav class="navbar navbar-expand-lg " style="background-color:rgb(178, 192, 192);">
+            <a style=  "margin-left: 60px" class="navbar-brand" href="/inicio"> <img src="../imagen/logo.png"  style="max-width: 120px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02" style=  "margin-left: 90px">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" style=  "margin-left: 100px"  href="/inicio"><b class="nave">Inicio</b> </a>
+                    </li>
+                    
+                        <li class="nav-item ">
+                            <a class="nav-link h5.5" href="/usuario"><b class="nave">Usuarios</b></a>
+                        </li>
+                
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" href="/producto"><b class="nave">Productos</b></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" href="/proveedor"><b class="nave">Proveedores</b></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5 " href="/stock"><b class="nave">Stock Producto</b></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5"  href="/informe"><b class="nave">Informes</b></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link"  text-danger href="/login" ><b class="nave">Cerrar Session</b> <i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+                </ul>
+        </nav>
+    </header>
+   <section class="container pt-4 mt-4">
+       <div class="container-fluid">
+           <div class="row mb-4">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-4">
+                   <form method="POST" action="../usuario/usuario.html" enctype="multipart/form-data" class="row">
+                       <div class="row col-sm-8">
+                           <div class="col-sm-6">
+                               <div class="form-group">
+                                 <label for="exampleInputEmail1">Tipo de Usuarios</label>
+                                 <select class="form-control" id="id_tipo" name="id_tipo" required="required">
+                                     <option>Administrador</option>
+                                   <option>Empleado </option>
+                                 </select>
+                               </div>
+                           </div>
+                           <div class="col-sm-6">
+                               <div class="form-group">
+                                 <label for="exampleInputEmail1">Nombres y Apellidos</label>
+                                 <input type="text" class="form-control" name="nombre_u" required="required" value="">
+                               </div>
+                           </div>
+                           <div class="col-sm-6">
+                               <div class="form-group">
+                                 <label for="exampleInputEmail1">Usuario</label>
+                                 <input type="text" class="form-control" name="usuario_u" required="required" value="">
+                               </div>
+                           </div>
+                           <div class="col-sm-6">
+                               <div class="form-group">
+                                 <label for="exampleInputEmail1">Correo</label>
+                                 <input type="email" class="form-control" name="correo_u" required="required" value="">
+                               </div>
+                           </div>
+                           <div class="col-sm-6">
+                               <div class="form-group">
+                                 <label for="exampleInputPassword1">Contraseña</label>
+                                 <input type="password" class="form-control" id="pass" name="contra_u" placeholder="Minimo 6 dígitos (Opcional)">
+                                 <input type="hidden" name="act_contra_u" value="">
+                               </div>
+                               <div class="form-group form-check">
+                                 <div class="icheck-primary">
+                                   <input type="checkbox" id="ver_pass" onchange="document.getElementById('pass').type = this.checked ? 'text' : 'password'">
+                                   <label for="ver_pass">Ver contraseña</label>
+                                 </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row col-sm-4">
+                           <div class="col-sm-12">
+                               <div class="form-group">
+                                 <label for="exampleInputEmail1">Foto</label>
+                                     <br>
+                                     <img src="<?= IMG.$foto_u; ?>" class="col-sm-12">
+                                 <input type="file" class="form-control" name="foto_u">
+                                 <input type="hidden" class="form-control" name="act_foto_u" value="">
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row col-sm-12">
+                           <div class="col-sm-6">
+                               <a href="/usuario" class="btn btn-danger btn-block"><i class="fas fa-arrow-left"></i> Regresar</a>
+                           </div>
+                           <div class="col-sm-6">
+                               <input type="hidden" name="pid" value="">
+                               <input type="hidden" name="id_updated" value="">
+                               <button type="submit" name="editar" class="btn btn-success btn-block">Editar <i class="fas fa-edit"></i></button>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+              </div>
+          </div>
+   </section>
+</body>
+</html>
