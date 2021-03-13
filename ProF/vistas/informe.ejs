@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Informe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="./imagen/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://sistemasongoku.com/plugins/ckeditor/ckeditor.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg " style="background-color:rgb(178, 192, 192);">
+            <a style=  "margin-left: 60px" class="navbar-brand" href="/inicio"> <img src="../imagen/logo.png"  style="max-width: 120px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02" style=  "margin-left: 90px">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" style=  "margin-left: 100px"  href="/inicio"><b class="nave">Inicio</b> </a>
+                    </li>
+                    
+                        <li class="nav-item ">
+                            <a class="nav-link h5.5" href="/usuario"><b class="nave">Usuarios</b></a>
+                        </li>
+                
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" href="/producto"><b class="nave">Productos</b></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5" href="/proveedor"><b class="nave">Proveedores</b></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5 " href="/stock"><b class="nave">Stock Producto</b></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link h5.5"  href="/informe"><b class="nave">Informes</b></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link"  text-danger href="/login" ><b class="nave">Cerrar Session</b> <i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+                </ul>
+        </nav>
+    </header>
+    <section class="container pt-4 mt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 text-center">
+                    <h3>Informe de productos</h3>
+                </div>
+                <div class="col-sm-4 text-right">
+                </div>
+            </div>
+            <hr>
+            <div class="row mb-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-4">
+                    <div class="card card-primary card-tabs">
+                        <div class="card-header p-0 pt-1">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ingresos</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-one-tabContent">
+                                <div class="tab-pane active" name="home" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div id="div1" class="col-sm-12">
+                                        <table id="example1" class="dataTable table table-bordered table-hover">
+                                            
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Nombre</th>
+                                                <th>Tipo de Producto</th>
+                                                <th>Costo</th>
+                                                <th>Cantidad Disponible</th>
+                                                <th>Ingresaron</th>
+                                                <th>Fecha de ingreso</th>
+                                            </tr>
+                                                <% for(var i=0; i<allIngresos.length; i++) { %>
+                                                    <tr class="quote">
+                                                      <td><%= allIngresos[i].id %></td>
+                                                      <td><%= allIngresos[i].nombre_p %></td>
+                                                      <td><%= allIngresos[i].tipo_p %></td>
+                                                      
+                                                      <td><%= allIngresos[i].costo_p %></td>
+                                                      <td><%= allIngresos[i].cantidad_p %></td>
+                                                      <td><%= allIngresos[i].cantidad_e %></td>
+                                                      <td><%= allIngresos[i].fecha_e %></td>  
+                    
+                                                    </tr>
+                                                <% } %>
+
+                                         </table>
+                                     </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+    </section>
+    <section class="container pt-4 mt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 text-right">
+                </div>
+            </div>
+            <hr>
+            <div class="row mb-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-4">
+                    <div class="card card-primary card-tabs">
+                        <div class="card-header p-0 pt-1">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Salida</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-one-tabContent">
+                                <div class="tab-pane active" name="home" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div id="div1" class="col-sm-12">
+                                        <table id="example1" class="dataTable table table-bordered table-hover">
+                                            
+                                            <tr>
+                            
+                                                <th>Id</th>
+                                                <th>Nombre</th>
+                                                <th>Tipo de Producto</th>
+                                                <th>Costo</th>
+                                                <th>Cantidad Disponible</th>
+                                                <th>Salieron</th>
+                                                <th>Fecha de Salida</th>
+                                            </tr>
+                                        </tr>
+                                        <% for(var i=0; i<allSalidas.length; i++) { %>
+                                            <tr class="quote">
+                                              <td><%= allSalidas[i].id %></td>
+                                              <td><%= allSalidas[i].nombre_p %></td>
+                                              <td><%= allSalidas[i].tipo_p %></td>
+                                              
+                                              <td><%= allSalidas[i].costo_p %></td>
+                                              <td><%= allSalidas[i].cantidad_p %></td>
+                                              <td><%= allSalidas[i].cantidad_s %></td>
+                                              <td><%= allSalidas[i].fecha_s %></td>  
+                    
+                                            </tr>
+                                                <% } %>
+
+                                         </table>
+                                     </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+    </section>
+    <div class="modal fade" id="nuevo" tabindex="-1" aria-labelledby="nuevoLabel" aria-hidden="true">
+    </div>
+    <script type="text/javascript">
+        function eliminar(){
+            var opcion = prompt("¿Está seguro de elimniar el producto?");
+            alert(" \n Una vez eliminado el producto no podrá volver a ser utilizado." );
+            if(opcion=="Si"||opcion=="si"){
+               alert("El registro ha sido eliminado");
+            }else{
+                alert("No ha podido ser eliminado le registro ");
+            }
+        }
+        function entrada(){
+            window.open("/entradaprodu" , "", "width: 700, height=1000" )
+        }
+        function salida(){
+            window.open("/salidaprodu", "", "width: 700, height=1000" )
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Ingreso</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon"  href="./imagen/favicon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="https://sistemasongoku.com/plugins/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+	<section class="container pt-4 mt-4">
+		<div class="container pt-4 mt-4">
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<h5 class="card-title text-center">EL INGRESO RESTRINGIDO SOLO PERSONAL ADMINISTRATIVO </h5>
+					<div class="card col-sm-12" style="width: auto;">
+						<div class="card-body">
+							<h5 class="card-title text-center">Ingresar al Sistema</h5>
+							<hr>
+							<p class="card-text text-center">Para Acceder al sistema necesitas ingresar tus credenciales.</p>
+							<form method="post" action="/login" >
+								<div class="form-group">
+									<label for="exampleInputEmail1">Usuario o Correo</label>
+									<input type="text" class="form-control" id="user" name="user" required="">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Contraseña</label>
+									<input type="password" class="form-control" id="pass" name="pass">
+								</div>
+								<div class="form-group form-check">
+									<div class="icheck-primary">
+										<input type="checkbox" id="ver_pass" onchange="document.getElementById('pass').type = this.checked ? 'text' : 'password'">
+										<label for="ver_pass">Ver contraseña</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12 pb-3">
+										<input type="submit" value="Entrar" onclick="ingreso();" class="btn btn-success btn-block"/>
+									</div>
+									
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
+		</div>
+    </section>
+    <script type="text/javascript">
+        function ingreso(){
+            usuario =document.getElementById('user').value;
+            contraseña =document.getElementById('pass').value;
+
+            if (usuario_u==null || usuario_u.length ==0) {
+                alert("Algunos campos estan vacios");
+                return false;
+            }
+            if (contraseña==null || contraseña.length ==0) {
+                alert("Algunos campos estan vacios");
+                return false;
+            }
+          return true;
+        }
+    </script>
+</body>
+</html>
